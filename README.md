@@ -10,16 +10,27 @@ Scheduled notifications in your Linux system regarding battery status and charge
     ```sh
     cd battery-notifier-linux && npm install
     ```
-* Make the script executable
+* Run the script
     ```sh
-    chmod 555 run-script.sh
-    ```
-* Execute the script
-    ```sh
-    ./run-script.sh
+    node index.js
     ```
 
 ## Run the script on system startup
-* Open up 'Startup Applications' program from System > Preferences
-  
-* Locate and add 'run-script.sh' as a startup application
+* Install pm2 globally
+    ```sh
+    npm install -g pm2
+    ```
+* Start index.js from inside the clone
+    ```sh
+    pm2 start index.js
+    ```
+* Create a startup script
+    ```sh
+    pm2 startup
+    ```
+    Copy and Paste the output of the above command in the terminal
+
+* Save the list of processes to spawn on system startup
+    ```sh
+    pm2 save
+    ```
