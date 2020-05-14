@@ -18,16 +18,20 @@ batteryMonitorService = async() => {
             notifier.notify({
                 title: 'Plug the charger!',
                 message: 'Your battery percentage is getting low. \nPlease plug the charger!',
+            }, (err) => { 
+                if(err) console.error(`error: ${err}`) ;
+                isNotifiedLow = true;
             });
-            isNotifiedLow = true;
         } else if (batteryLevel <= 35 && isCharging === true && isNotifiedLow === true){ 
             isNotifiedLow = false;
         } else if (batteryLevel >= 85 && isCharging === true && isNotifiedHigh === false) {
             notifier.notify({
                 title: 'Unplug the charger!',
                 message: 'Battery is now sufficiently charged. \nYou may unplug the charger!',
+            }, (err) => { 
+                if(err) console.error(`error: ${err}`) ;
+                isNotifiedHigh = true;
             });
-            isNotifiedHigh = true;
         } else if (batteryLevel >= 85 && isCharging === true && isNotifiedHigh === true) {
             isNotifiedHigh = false;
         }
