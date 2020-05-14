@@ -1,7 +1,7 @@
 const notifier = require('node-notifier');
 const si = require('systeminformation');
 
-console.log('batter-notifier-linux service started.');
+console.log('battery-notifier-linux service started.');
 
 let isCharging = false,
     batteryLevel = 100,
