@@ -1,6 +1,8 @@
 # battery-notifier-linux
 Scheduled notifications in your Linux system regarding battery status and charge
 
+![](battery-notifier-linux.gif)
+
 ## Usage
 * Clone the repository
     ```sh
