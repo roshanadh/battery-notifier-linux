@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/roshanadh/battery-notifier-linux#readme",
   "dependencies": {
-    "node-notifier": "^7.0.0",
+    "node-notifier": "^8.0.1",
     "systeminformation": "^4.26.1"
   }
 }
